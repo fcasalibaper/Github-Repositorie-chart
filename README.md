@@ -1,4 +1,6 @@
-# Siempre en casa - challenge
+# Github personal repositories list
+
+GraphQL test with SSR and NextJs
 
 ## How to Install
 
@@ -25,7 +27,6 @@ The application can be run locally (localhost: 3000), or with an absolute path d
 Once the project is started, its preview begins with the following urls:
 \
 \
-[DB RUN ON HEROKU HERE](http://morning-cliffs-98727.herokuapp.com/products) \
 [APP RUN LOCAL HERE](http://localhost:3000/) (After installing, building and starting the app locally) \
 or \
-[APP RUN ON VERCEL HERE](https://siempre-en-casa-challenge.vercel.app/)
+[APP RUN ON VERCEL HERE](https://github-repositorie-chart.vercel.app/)
