@@ -3,12 +3,16 @@ import { Container } from '@styles/general.styles';
 import Header from '~/Header/Header';
 import { LayoutWrapper } from './Layout.styled';
 
-// type LayoutProps = {
-// 	children: ReactNode,
-// 	API_PATH: string
-// }
+interface LayoutProps {
+	children: ReactNode,
+	userData: {
+		name: string,
+		bio: string,
+		location: string
+	}
+}
 // const Layout = ({children, API_PATH} : LayoutProps) => {
-const Layout = ({children, userData}) => {
+const Layout = ({children, userData} : LayoutProps) => {
 	return (
 		<LayoutWrapper
 			direction={"column"}

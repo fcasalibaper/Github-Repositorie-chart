@@ -5,10 +5,26 @@ import { Grid } from "@styles/grid.styled";
 import { Card } from "@styles/cards.styled";
 import { ButtonStyled } from "@styles/general.styles";
 
-// interface HomeProps {
-// 	products: ObjMap[],
-// 	API_PATH: string
-// }
+interface HomeProps {
+	repos: {
+		id: string,
+		name: string,
+		description: string,
+		url: string,
+		isPrivate: boolean,
+		languages: {
+			nodes: {
+				id: string,
+				name: string
+			}
+		}
+	},
+	user: {
+		name: string,
+		bio: string,
+		location: string
+	}
+}
 
 const Queries = ({ dataRepo }) => {
 	return (
@@ -46,7 +62,7 @@ const Queries = ({ dataRepo }) => {
 	)
 }
 
-const Home = ({user, repos}) => {
+const Home = ({user, repos } : HomeProps) => {
 	console.log(`user`, user)
 	return (
 		<Layout userData={user}>

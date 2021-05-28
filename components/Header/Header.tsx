@@ -1,17 +1,17 @@
 import { Container } from "@styles/general.styles";
-import { useState } from 'react';
 import Link from "next/link";
-import { AnimatePresence, motion } from 'framer-motion';
 import { HeaderStyled } from "./Header.styled";
-import { fadeInLeft } from "~/animatedComponent/variables";
 import { Grid } from "@styles/grid.styled";
 
-// interface HeaderProps {
-// 	API_PATH: string
-// }
-// const Header = ({API_PATH} : HeaderProps) => {
-const Header = ({userData}) => {
-	const [ openCart, setOpenCart ] = useState<boolean>(false);
+interface HeaderProps {
+	userData: {
+		name: string,
+		bio: string,
+		location: string
+	}
+}
+
+const Header = ({ userData } : HeaderProps) => {
 	
   return (
 		<HeaderStyled as="header">
