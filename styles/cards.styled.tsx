@@ -23,5 +23,6 @@ export const CardsHover = css`
 `;
 
 export const Card = styled(Grid)`
+	border-radius: 3px;
 	${CardsHover}
 `;

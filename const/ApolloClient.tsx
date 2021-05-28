@@ -1,6 +1,5 @@
 import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client'
 
-// apollo connection
 const client = new ApolloClient({
 	ssrMode: true,
 	link: new HttpLink({
@@ -10,6 +9,6 @@ const client = new ApolloClient({
 		}
 	}),
 	cache: new InMemoryCache()
-})
+});
 
 export default client;

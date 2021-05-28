@@ -8,14 +8,13 @@ import { LayoutWrapper } from './Layout.styled';
 // 	API_PATH: string
 // }
 // const Layout = ({children, API_PATH} : LayoutProps) => {
-const Layout = ({children}) => {
+const Layout = ({children, userData}) => {
 	return (
 		<LayoutWrapper
 			direction={"column"}
 			xAlign={"center"}
 		>
-			{/* <Header API_PATH={API_PATH} /> */}
-			<Header />
+			<Header userData={userData} />
 			<Container>
 				{children}
 			</Container>

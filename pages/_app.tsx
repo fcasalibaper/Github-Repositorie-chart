@@ -5,8 +5,8 @@ import { Fragment } from "react";
 import { GlobalStyle } from "@styles/global.styles";
 import { AnimatePresence, motion } from 'framer-motion';
 import { fadeInScreen } from '~/animatedComponent/variables';
-import { ApolloProvider } from 'react-apollo';
-import client from '@const/ApolloClient';
+// import { ApolloProvider } from 'react-apollo';
+// import client from '@const/ApolloClient';
 // import ToolResponsive from '@help/ToolResponsive/ToolResponsive';
 
 
@@ -26,9 +26,9 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
 					variants={ fadeInScreen }
 					key={`motionPresnce-${router.route}`}
 					>
-					<ApolloProvider client={client}>
+					{/* <ApolloProvider client={client}> */}
 						<Component {...pageProps} />
-					</ApolloProvider>
+					{/* </ApolloProvider> */}
 				</motion.div>
 			</AnimatePresence>
 			{/* {<ToolResponsive position={'bottomLeft'} />} */}

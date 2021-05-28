@@ -3,7 +3,7 @@ export const FONT_SIZE_ROOT = 12;
 export const FONT_ROOT = `'Montserrat', sans-serif`;
 
 // HEADER
-export const HEADER_HEIGHT_DESKTOP = 100;
+export const HEADER_HEIGHT_DESKTOP = 160;
 export const HEADER_HEIGHT_MOBILE = 79;
 
 // font weight

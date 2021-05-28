@@ -117,11 +117,11 @@ export const UnderLinkSpan = UnderlineLink.withComponent('span');
 
 export const ButtonStyled = styled.button`
 	font-family: ${FONT_ROOT};
-	border-radius: 8px;
+	border-radius: 4px;
 	border: none;
 	box-shadow: 0 2px 1px 0 rgba(50, 54, 72, 0.5),
 		0 3px 8px 0 rgba(50, 54, 72, 0.2);
-	height: 43px;
+	/* height: 43px; */
 	padding: 1rem 2rem;
 	text-transform: ${props => props.uppercase == true ? 'uppercase' : 'inherit' };
 	background-color: ${props => props.variant == 'outlined' ? 'transparent' : DARKBLUE};
@@ -137,10 +137,10 @@ export const ButtonStyled = styled.button`
 	transition: ${TRANSITION};
 
 	${media.greaterThan('sm')`
-		border-radius: 16px;
+		border-radius: 4px;
 		font-size: 1.3rem;
 		line-height: 1.55;
-		height: 50px;
+		/* height: 50px; */
 	`};
 
 	&:hover,
@@ -149,6 +149,13 @@ export const ButtonStyled = styled.button`
 								0 7px 5px 1px rgba(78, 97, 179, 0.08),
 								0 12px 12px 0px rgba(120, 56, 133, 0.04);
 	}
+
+	${props => props.disabled &&`
+		cursor: none;
+		pointer-event: none;
+		background-color: #9e9e9e;
+		color: #888888;
+	`}
 `;
 
 export const UnderLinkButton = styled(ButtonStyled)`
