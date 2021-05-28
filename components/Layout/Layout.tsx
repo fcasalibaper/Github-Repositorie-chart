@@ -9,6 +9,8 @@ interface LayoutProps {
 		name: string,
 		bio: string,
 		location: string
+		avatarUrl: string,
+		url: string
 	}
 }
 // const Layout = ({children, API_PATH} : LayoutProps) => {

@@ -2,22 +2,37 @@ import { Container } from "@styles/general.styles";
 import Link from "next/link";
 import { HeaderStyled } from "./Header.styled";
 import { Grid } from "@styles/grid.styled";
+import Image from 'next/image'
 
 interface HeaderProps {
 	userData: {
 		name: string,
 		bio: string,
-		location: string
+		location: string,
+		avatarUrl: string,
+		url: string
 	}
 }
 
 const Header = ({ userData } : HeaderProps) => {
-	
+	const { name, bio, location, avatarUrl, url } = userData;
   return (
 		<HeaderStyled as="header">
 			<Container justifyContent={'space-between'} alignItems={'center'}>
-				<Link href="/" passHref>
-					<a><h2>{userData.name} - Repos</h2></a>
+				<Link href={url} passHref>
+					<a>
+						<Grid
+							direction="row"
+							xAlign="center"
+						>
+							<Image
+								src={avatarUrl}
+								width={50}
+								height={50}
+							/>
+							<h2 style={{ paddingLeft: '20px'}}>{name} - Repos</h2>
+						</Grid>
+					</a>
 				</Link>
 
 				<Grid
@@ -28,8 +43,8 @@ const Header = ({ userData } : HeaderProps) => {
 						textAlign : 'right'
 					}}
 				>
-					<li><span>{userData.bio}</span></li>
-					<li><span>{userData.location}</span></li>
+					<li><span>{bio}</span></li>
+					<li><span>{location}</span></li>
 				</Grid>
 			</Container>
 		</HeaderStyled>

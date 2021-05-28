@@ -24,7 +24,9 @@ interface HomeProps {
 	user: {
 		name: string,
 		bio: string,
-		location: string
+		location: string,
+		url: string,
+		avatarUrl: string
 	}
 }
 

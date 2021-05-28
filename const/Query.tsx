@@ -6,6 +6,8 @@ const QUERY = gql`
 			name
 			bio
 			location
+			url
+    	avatarUrl
 		}
 		viewer {
 			repositories(last: 40) {
