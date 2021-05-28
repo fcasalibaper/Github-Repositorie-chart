@@ -25,4 +25,8 @@ export const CardsHover = css`
 export const Card = styled(Grid)`
 	border-radius: 3px;
 	${CardsHover}
+
+	h2, span, p, button {
+		flex-grow: 1
+	}
 `;

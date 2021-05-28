@@ -1,9 +1,11 @@
 import Layout from "~/Layout/Layout";
 // import { ObjMap } from 'const/const';
-import Link from "next/link";
 import { Grid } from "@styles/grid.styled";
 import { Card } from "@styles/cards.styled";
-import { ButtonStyled } from "@styles/general.styles";
+import Button from "~/Button/Button";
+import { pxs } from '@styles/breakpoints.styled';
+import useMatchMedia from 'react-use-match-media';
+
 
 interface HomeProps {
 	repos: {
@@ -26,6 +28,13 @@ interface HomeProps {
 	}
 }
 
+const useMatchMediaFn = (breakpoint) => {
+	const width = pxs[breakpoint] + 1;
+	const matched = useMatchMedia("(min-width: "+ width +"px)");
+
+	return matched
+}
+
 const Queries = ({ dataRepo }) => {
 	return (
 	<Grid
@@ -36,8 +45,10 @@ const Queries = ({ dataRepo }) => {
 		{ dataRepo.map(p => <Grid 
 			key={p.id}
 			as="li"
-			colSize={4}
-			padd={'20px'}
+			colSizeMD={4}
+			colSizeSM={6}
+			colSizeXS={12}
+			padd={ useMatchMediaFn('xs') ? '20px' : '0'}
 		>
 			<Card
 				padd={'20px'}
@@ -45,15 +56,14 @@ const Queries = ({ dataRepo }) => {
 				colSize={12}>
 					<h2>{p.name}</h2>
 					<br />
-					<span>{p.description}</span>
+					<span>{p.description ? p.description : 'Without description'}</span>
 					<br />
 					{p.languages.nodes.map(l => <p key={l.id}>{l.name}</p>)}
 					<br />
-					<Link href={p.url} passHref>
-						<ButtonStyled as="a" target="_blank" disabled={p.isPrivate}>
-							{!p.isPrivate ? p.url.split('/').pop() : 'Private'}
-						</ButtonStyled>
-					</Link>
+					<Button
+						url={p.url}
+						disabled={p.isPrivate}
+					/>
 					<br /><br />
 			</Card>
 		</Grid>).reverse()}
@@ -63,7 +73,7 @@ const Queries = ({ dataRepo }) => {
 }
 
 const Home = ({user, repos } : HomeProps) => {
-	console.log(`user`, user)
+	
 	return (
 		<Layout userData={user}>
 			<Queries dataRepo={repos} />
