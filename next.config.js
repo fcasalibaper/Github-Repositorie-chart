@@ -6,9 +6,6 @@ module.exports = {
 	future: {
     webpack5: true,
   },
-	env: {
-		GITHUB_TOKEN : process.env.GITHUB_TOKEN
-	},
 	publicRuntimeConfig: {
     GITHUB_TOKEN : process.env.GITHUB_TOKEN
 	},
