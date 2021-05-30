@@ -1,4 +1,4 @@
-import Layout from "~/Layout/Layout";
+import LayoutComponent from "~/Layout/LayoutComponent";
 import { ObjMap } from 'const/const';
 
 interface DeatilProps {
@@ -9,9 +9,9 @@ interface DeatilProps {
 const Detail = ({ detailRepo, API_PATH } : DeatilProps) => {
 
   return detailRepo != undefined && (
-    <Layout API_PATH={API_PATH}>
+    <LayoutComponent API_PATH={API_PATH}>
 			detail
-		</Layout>
+		</LayoutComponent>
   ) 
 }
 

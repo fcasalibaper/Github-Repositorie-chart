@@ -18,7 +18,7 @@ module.exports = {
   },
 	
 	images: {
-    domains: ['avatars.githubusercontent.com'],
+    domains: ['avatars.githubusercontent.com','https://cdn.shopify.com'],
   },
 	resole : {
 		modules: [path.resolve(__dirname, 'node_modules'), 'node_modules']

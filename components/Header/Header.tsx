@@ -1,8 +1,6 @@
-import { Container } from "@styles/general.styles";
-import Link from "next/link";
-import { HeaderStyled } from "./Header.styled";
-import { Grid } from "@styles/grid.styled";
-import Image from 'next/image'
+import React, {useCallback, useState} from 'react';
+import {Icon, VisuallyHidden, ActionList, TopBar} from '@shopify/polaris';
+import {ArrowLeftMinor, QuestionMarkMajor} from '@shopify/polaris-icons';
 
 interface HeaderProps {
 	userData: {
@@ -16,38 +14,108 @@ interface HeaderProps {
 
 const Header = ({ userData } : HeaderProps) => {
 	const { name, bio, location, avatarUrl, url } = userData;
-  return (
-		<HeaderStyled as="header">
-			<Container justifyContent={'space-between'} alignItems={'center'}>
-				<Link href={url} passHref>
-					<a>
-						<Grid
-							direction="row"
-							xAlign="center"
-						>
-							<Image
-								src={avatarUrl}
-								width={50}
-								height={50}
-							/>
-							<h2 style={{ paddingLeft: '20px'}}>{name} - Repos</h2>
-						</Grid>
-					</a>
-				</Link>
+	const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const [isSecondaryMenuOpen, setIsSecondaryMenuOpen] = useState(false);
+  const [isSearchActive, setIsSearchActive] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
 
-				<Grid
-					as="ul"
-					direction="column"
-					colSize="3"
-					style={{
-						textAlign : 'right'
-					}}
-				>
-					<li><span>{bio}</span></li>
-					<li><span>{location}</span></li>
-				</Grid>
-			</Container>
-		</HeaderStyled>
+  const toggleIsUserMenuOpen = useCallback(
+    () => setIsUserMenuOpen((isUserMenuOpen) => !isUserMenuOpen),
+    [],
+  );
+
+  const toggleIsSecondaryMenuOpen = useCallback(
+    () => setIsSecondaryMenuOpen((isSecondaryMenuOpen) => !isSecondaryMenuOpen),
+    [],
+  );
+
+  const handleSearchResultsDismiss = useCallback(() => {
+    setIsSearchActive(false);
+    setSearchValue('');
+  }, []);
+
+  const handleSearchChange = useCallback((value) => {
+    setSearchValue(value);
+    setIsSearchActive(value.length > 0);
+  }, []);
+
+  const handleNavigationToggle = useCallback(() => {
+    console.log('toggle navigation visibility');
+  }, []);
+
+  const theme = {
+    logo: {
+      width: 124,
+      topBarSource:
+        'https://cdn.shopify.com/s/files/1/0446/6937/files/jaded-pixel-logo-color.svg?6215648040070010999',
+      url: 'http://jadedpixel.com',
+      accessibilityLabel: 'Jaded Pixel',
+    },
+  };
+
+  const userMenuMarkup = (
+    <TopBar.UserMenu
+      actions={[
+        {
+          items: [{content: 'Back to Shopify', icon: ArrowLeftMinor}],
+        },
+        {
+          items: [{content: 'Community forums'}],
+        },
+      ]}
+      name="Dharma"
+      detail="Jaded Pixel"
+      initials="D"
+      open={isUserMenuOpen}
+      onToggle={toggleIsUserMenuOpen}
+    />
+  );
+
+  const searchResultsMarkup = (
+    <ActionList
+      items={[{content: 'Shopify help center'}, {content: 'Community forums'}]}
+    />
+  );
+
+  const searchFieldMarkup = (
+    <TopBar.SearchField
+      onChange={handleSearchChange}
+      value={searchValue}
+      placeholder="Search"
+      showFocusBorder
+    />
+  );
+
+  const secondaryMenuMarkup = (
+    <TopBar.Menu
+      activatorContent={
+        <span>
+          <Icon source={QuestionMarkMajor} />
+          <VisuallyHidden>Secondary menu</VisuallyHidden>
+        </span>
+      }
+      open={isSecondaryMenuOpen}
+      onOpen={toggleIsSecondaryMenuOpen}
+      onClose={toggleIsSecondaryMenuOpen}
+      actions={[
+        {
+          items: [{content: 'Community forums'}],
+        },
+      ]}
+    />
+  );
+
+  return (
+		<TopBar
+      showNavigationToggle
+      userMenu={userMenuMarkup}
+      secondaryMenu={secondaryMenuMarkup}
+      searchResultsVisible={isSearchActive}
+      searchField={searchFieldMarkup}
+      searchResults={searchResultsMarkup}
+      onSearchResultsDismiss={handleSearchResultsDismiss}
+      onNavigationToggle={handleNavigationToggle}
+    />
   )
 }
 

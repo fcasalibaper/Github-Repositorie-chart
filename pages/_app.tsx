@@ -1,10 +1,13 @@
 import type { AppProps} from 'next/app';
+import '@shopify/polaris/dist/styles.css';
 // import dynamic from 'next/dynamic';
 import MyHead from "./_head";
 import { Fragment } from "react";
 import { GlobalStyle } from "@styles/global.styles";
 import { AnimatePresence, motion } from 'framer-motion';
 import { fadeInScreen } from '~/animatedComponent/variables';
+import enTranslations from '@shopify/polaris/locales/en.json';
+import {AppProvider, Button} from '@shopify/polaris';
 
 const MyApp = ({ Component, pageProps, router }: AppProps) => {
 	return (
@@ -22,7 +25,9 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
 					variants={ fadeInScreen }
 					key={`motionPresnce-${router.route}`}
 					>
-					<Component {...pageProps} />
+					<AppProvider i18n={enTranslations}>
+						<Component {...pageProps} />
+					</AppProvider>
 				</motion.div>
 			</AnimatePresence>
     </Fragment>

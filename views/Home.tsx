@@ -1,11 +1,10 @@
-import Layout from "~/Layout/Layout";
+import LayoutComponent from "~/Layout/LayoutComponent";
 // import { ObjMap } from 'const/const';
-import { Grid } from "@styles/grid.styled";
-import { Card } from "@styles/cards.styled";
+// import { Card } from "@styles/cards.styled";
 import Button from "~/Button/Button";
 import { pxs } from '@styles/breakpoints.styled';
 import useMatchMedia from 'react-use-match-media';
-
+import { Page, Layout, Card } from "@shopify/polaris";
 
 interface HomeProps {
 	repos: {
@@ -39,47 +38,35 @@ const useMatchMediaFn = (breakpoint) => {
 
 const Queries = ({ dataRepo }) => {
 	return (
-	<Grid
-		as="ul"
-		colSize={12}
-		wrap="true"
-	>
-		{ dataRepo.map(p => <Grid 
-			key={p.id}
-			as="li"
-			colSizeMD={4}
-			colSizeSM={6}
-			colSizeXS={12}
-			padd={ useMatchMediaFn('xs') ? '20px' : '0'}
-		>
-			<Card
-				padd={'20px'}
-				direction="column"
-				colSize={12}>
-					<h2>{p.name}</h2>
-					<br />
-					<span>{p.description ? p.description : 'Without description'}</span>
-					<br />
-					{p.languages.nodes.map(l => <p key={l.id}>{l.name}</p>)}
-					<br />
-					<Button
-						url={p.url}
-						disabled={p.isPrivate}
-					/>
-					<br /><br />
-			</Card>
-		</Grid>).reverse()}
-		<br />
-	</Grid>
+		<Layout>
+			{ dataRepo.map(p => <Layout.Section oneThird key={p.id}>
+				<Card
+						sectioned
+						subdued
+						title={p.name}>
+							<span>{p.description ? p.description : 'Without description'}</span>
+							<br />
+							{p.languages.nodes.map(l => <p key={l.id}>{l.name}</p>)}
+							<br />
+							<Button
+								url={p.url}
+								disabled={p.isPrivate}
+							/>
+							<br /><br />
+					</Card>
+			</Layout.Section>).reverse()}
+			
+		</Layout>
 	)
 }
 
 const Home = ({user, repos } : HomeProps) => {
 	
 	return (
-		<Layout userData={user}>
+		<LayoutComponent userData={user}>
 			<Queries dataRepo={repos} />
-		</Layout>
+			<br />
+		</LayoutComponent>
   )
 }
 
