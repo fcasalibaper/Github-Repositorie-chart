@@ -4,7 +4,7 @@ const cubicIn = [0.55, 0.06, 0.68, 0.19];
 export const fadeInScreen = {
   initial : {
 		opacity : 0,
-		background: '#ffffff',
+		background: "#ffffff",
     y : -10,
 		scale: 1.1,
 		transition: {
@@ -22,13 +22,13 @@ export const fadeInScreen = {
   exit : {
     y : -10,
     opacity : 0,
-    background: '#ffffff',
+    background: "#ffffff",
 		scale: 1.03,
 		transition: {
 			ease : cubicIn
 		}
   }
-}
+};
 
 export const fadeIn = {
   initial : {
@@ -52,7 +52,7 @@ export const fadeIn = {
 			ease : cubicOut,
 		}
   }
-}
+};
 
 export const fadeInLeft = {
   initial : {
@@ -72,18 +72,18 @@ export const fadeInLeft = {
   exit : {
 		x : -70,
     opacity : 1,
-    background: '#d00',
+    background: "#d00",
 		transition: {
 			ease : cubicOut
 		}
   }
-}
+};
 
 export const fadeInDown = {
   initial : {
     opacity : 0,
     y : -70,
-		background: '#ffffff',
+		background: "#ffffff",
 		transition: {
 			ease : cubicOut
 		}
@@ -98,18 +98,18 @@ export const fadeInDown = {
   exit : {
 		y : -150,
 		opacity : 0,
-		background: '#ffffff',
+		background: "#ffffff",
 		transition: {
 			ease : cubicOut
 		}
   }
-}
+};
 
 export const CardErased = {
   initial : {
     opacity : 0,
     y : -70,
-		background: '#ffffff',
+		background: "#ffffff",
 		transition: {
 			ease : cubicOut
 		}
@@ -122,8 +122,8 @@ export const CardErased = {
 		}
   },
   exit : {
-		translateX: '50%',
-		background: '#b80000',
+		translateX: "50%",
+		background: "#b80000",
 		opacity : 0,
 		transition: {
 			ease : cubicOut,
@@ -131,16 +131,16 @@ export const CardErased = {
 			delay: .30,
 		}
   }
-}
+};
 
 export const fadeInZ = {
   initial : {
-		position: 'absolute',
-    width: '100%',
+		position: "absolute",
+    width: "100%",
 		opacity : 0,
 		top: 0,
-		left: '50%',
-		translateX: '-50%',
+		left: "50%",
+		translateX: "-50%",
 		translateY: 0,
 		transition: {
 			ease : cubicOut,
@@ -149,8 +149,8 @@ export const fadeInZ = {
   },
   animate : {
 		opacity : 1,
-		top: '50%',
-		translateY: '-50%',
+		top: "50%",
+		translateY: "-50%",
 		transition: {
 			ease : cubicOut,
 			duration: .250,
@@ -165,12 +165,12 @@ export const fadeInZ = {
 			duration: .150
 		}
   }
-}
+};
 
 export const fadeInBottom = {
   initial : {
 		opacity : 0,
-		y: '-10px',
+		y: "-10px",
 		transition: {
 			ease : cubicOut,
 			duration: .250,
@@ -186,13 +186,13 @@ export const fadeInBottom = {
   },
   exit : {
 		opacity : 0,
-		y: '-10px',
+		y: "-10px",
 		transition: {
 			ease : cubicOut,
 			duration: .150
 		}
   }
-}
+};
 
 export const fadeInBottomZ = {
   initial : {
@@ -216,7 +216,7 @@ export const fadeInBottomZ = {
 			duration: .150
 		}
   }
-}
+};
 
 export const stagger = {
   animate : {
@@ -225,4 +225,4 @@ export const stagger = {
       staggerChildren : .11
     }
   }
-}
+};

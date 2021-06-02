@@ -1,18 +1,18 @@
 import Layout from "~/Layout/Layout";
-import { ObjMap } from 'const/const';
+import { ObjMap } from "const/const";
 
 interface DeatilProps {
-	detail: ObjMap[],
+	detailRepo: ObjMap[],
 	API_PATH: string
 }
 
 const Detail = ({ detailRepo, API_PATH } : DeatilProps) => {
 
-  return detailRepo != undefined && (
+  return (
     <Layout API_PATH={API_PATH}>
 			detail
 		</Layout>
-  ) 
-}
+  );
+};
 
 export default Detail;

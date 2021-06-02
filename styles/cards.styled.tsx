@@ -3,7 +3,7 @@ import { Grid } from "./grid.styled";
 import { TRANSITION } from "./variables.styled";
 
 // cards shadows and animation hover
-export const CARD_SHADOWS = `rgba(0, 0, 0, 0.08) 0px 2px 4px 0px`;
+export const CARD_SHADOWS = "rgba(0, 0, 0, 0.08) 0px 2px 4px 0px";
 export const CARD_SHADOWS_HOVER = `
   rgba(0, 0, 0, 0.1) 0px 2px 2.5px 0.5px,
   rgba(0, 0, 0, 0.065) 0px 8px 5px 0px,
@@ -24,7 +24,7 @@ export const CardsHover = css`
 
 export const Card = styled(Grid)`
 	border-radius: 3px;
-	${CardsHover}
+	${CardsHover};
 
 	h2, span, p, button {
 		flex-grow: 1

@@ -1,6 +1,6 @@
-import { getData } from '@help/helpers';
-import { GetServerSideProps } from 'next'
-import getConfig from 'next/config';
+import { getData } from "@help/helpers";
+import { GetServerSideProps } from "next";
+import getConfig from "next/config";
 const { publicRuntimeConfig = {} } = getConfig() || {};
 
 // Exporting Home
@@ -17,5 +17,5 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 			detail,
 			API_PATH
     }
-  }
-}
+  };
+};

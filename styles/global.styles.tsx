@@ -1,12 +1,12 @@
 
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 import { media } from "./breakpoints.styled";
-import { FONT_ROOT, FONT_SIZE_ROOT, HEADER_HEIGHT_DESKTOP, HEADER_HEIGHT_MOBILE } from './variables.styled';
+import { FONT_ROOT, FONT_SIZE_ROOT, HEADER_HEIGHT_DESKTOP, HEADER_HEIGHT_MOBILE } from "./variables.styled";
 
-const scrollbartrackcolor = 'transparent';
-const scrollbarcolor = 'rgba(0,0,0,.3)';
-const scrollbarsize = '4px';
-const scrollbarminlength = '4px'; /* Minimum length of scrollbar thumb (width of horizontal, height of vertical) */
+const scrollbartrackcolor = "transparent";
+const scrollbarcolor = "rgba(0,0,0,.3)";
+const scrollbarsize = "4px";
+const scrollbarminlength = "4px"; /* Minimum length of scrollbar thumb (width of horizontal, height of vertical) */
 
 export const GlobalStyle = createGlobalStyle`
   :root {

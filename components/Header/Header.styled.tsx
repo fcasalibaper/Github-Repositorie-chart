@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { BOLD, ORANGE, REGULAR, SEMIBOLD } from '@styles/variables.styled';
-import { media } from '@styles/breakpoints.styled';
-import { Grid } from '@styles/grid.styled';
+import styled from "styled-components";
+import { BOLD, ORANGE, REGULAR, SEMIBOLD } from "@styles/variables.styled";
+import { media } from "@styles/breakpoints.styled";
+import { Grid } from "@styles/grid.styled";
 
 export const HeaderStyled = styled(Grid)`
 	position: fixed;

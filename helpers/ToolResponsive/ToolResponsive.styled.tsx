@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { media } from '@styles/breakpoints.styled';
+import styled from "styled-components";
+import { media } from "@styles/breakpoints.styled";
 
 export const ToolResponsiveCont = styled.div`
   position:fixed;
@@ -12,7 +12,7 @@ export const ToolResponsiveCont = styled.div`
   flex-direction: column;
   padding: 20px;
 
-  ${props => props.position == 'bottomLeft' &&`
+  ${props => (props.position) === "bottomLeft" &&`
     bottom:0;
     left:0;
     border-top-right-radius: 100%;
@@ -20,7 +20,7 @@ export const ToolResponsiveCont = styled.div`
     border-bottom-right-radius: 100%;
   `}
 
-  ${props => props.position == 'bottomRight' &&`
+  ${props => (props.position) === "bottomRight" &&`
     bottom:0;
     right:0;
     border-top-left-radius:100%;
@@ -28,7 +28,7 @@ export const ToolResponsiveCont = styled.div`
     border-bottom-left-radius: 100%;
   `}
 
-  ${props => props.position == 'topLeft' &&`
+  ${props => (props.position) === "topLeft" &&`
     top:0;
     left:0;
     border-bottom-right-radius:100%;
@@ -36,7 +36,7 @@ export const ToolResponsiveCont = styled.div`
     border-top-right-radius: 100%;
   `}
 
-  ${props => props.position == 'topRight' &&`
+  ${props => (props.position) === "topRight" &&`
     top:0;
     right:0;
     border-top-left-radius:100%;
@@ -57,19 +57,19 @@ export const ToolResponsiveCont = styled.div`
       line-height:1.2;
       text-transform:uppercase;
       color:white;
-      content:'xl';
+      content:"xl";
 
-			${media.lessThan('lg')`
-        content:'lg';
+			${media.lessThan("lg")`
+        content:"lg";
       `}
-      ${media.lessThan('md')`
-        content:'md';
+      ${media.lessThan("md")`
+        content:"md";
       `}
-      ${media.lessThan('sm')`
-        content:'sm';
+      ${media.lessThan("sm")`
+        content:"sm";
       `}
-      ${media.lessThan('xs')`
-        content:'xs';
+      ${media.lessThan("xs")`
+        content:"xs";
       `}
     }
   }

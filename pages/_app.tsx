@@ -1,10 +1,10 @@
-import type { AppProps} from 'next/app';
-// import dynamic from 'next/dynamic';
+import type { AppProps } from "next/app";
+// import dynamic from "next/dynamic";
 import MyHead from "./_head";
 import { Fragment } from "react";
 import { GlobalStyle } from "@styles/global.styles";
-import { AnimatePresence, motion } from 'framer-motion';
-import { fadeInScreen } from '~/animatedComponent/variables';
+import { AnimatePresence, motion } from "framer-motion";
+import { fadeInScreen } from "~/animatedComponent/variables";
 
 const MyApp = ({ Component, pageProps, router }: AppProps) => {
 	return (
@@ -15,7 +15,7 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
 				exitBeforeEnter
 			>
 				<motion.div
-					style={{height: '100%', width: '100%', position: 'relative'}}
+					style={{height: "100%", width: "100%", position: "relative"}}
 					initial="initial"
 					animate="animate"
 					exit="exit"
@@ -26,6 +26,7 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
 				</motion.div>
 			</AnimatePresence>
     </Fragment>
-  )
-}
-export default MyApp
+  );
+};
+
+export default MyApp;

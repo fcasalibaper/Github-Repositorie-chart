@@ -1,28 +1,28 @@
-import styled from 'styled-components';
-import { containerMaxWidth, media } from './breakpoints.styled';
-import { REGULAR, TRANSITION, PADDING_DESKTOP_LR, BOLD, FONT_ROOT, PADDING_MOBILE_LR, ORANGE, DARKBLUE } from './variables.styled';
+import styled from "styled-components";
+import { containerMaxWidth, media } from "./breakpoints.styled";
+import { REGULAR, TRANSITION, PADDING_DESKTOP_LR, BOLD, FONT_ROOT, PADDING_MOBILE_LR, DARKBLUE } from "./variables.styled";
 
 
 export const Row = styled.div`
   position:relative;
   display:flex;
-  flex-direction: ${props => props.column ? 'column' : 'row'};
+  flex-direction: ${props => (props.column) ? "column" : "row"};
   /* max-width:100%; */
-  width:${props => props.width ? props.width : '100%'};
+  width:${props => (props.width) ? props.width : "100%"};
   
-	${props => props.maxWidth &&`
+	${props => (props.maxWidth) &&`
     max-width: ${props.maxWidth};
   `}
 
-  ${props => props.wrap &&`
+  ${props => (props.wrap) &&`
     flex-wrap: wrap;
   `}
 
-  ${props => props.margin &&`
+  ${props => (props.margin) &&`
     margin: ${props.margin};
   `}
 
-  ${props => props.padd &&`
+  ${props => (props.padd) &&`
     padding: ${props.padd};
   `}
 `;
@@ -33,30 +33,30 @@ export const Container = styled.div`
   width:100%;
 	max-width: ${containerMaxWidth}px;
 	margin: auto;
-	padding: ${props => props.padd ? props.padd : `0 ${PADDING_MOBILE_LR}px`};
-  flex-direction: ${props => props.column ? 'column' : 'row'};
+	padding: ${props => (props.padd) ? props.padd : `0 ${PADDING_MOBILE_LR}px`};
+  flex-direction: ${props => props.column ? "column" : "row"};
 
 	${media.greaterThan("sm")`
-		padding: ${props => props.padd ? props.padd : `0 ${PADDING_DESKTOP_LR}px`};
+		padding: ${props => (props.padd) ? props.padd : `0 ${PADDING_DESKTOP_LR}px`};
 	`};
 
   ${props => props.center &&`
     justify-content:center;
   `}
 
-  ${props => props.justifyContent &&`
+  ${props => (props.justifyContent) &&`
     justify-content: ${props.justifyContent};
   `}
 
-  ${props => props.alignItems &&`
+  ${props => (props.alignItems) &&`
     align-items: ${props.alignItems};
   `}
 
-  ${props => props.wrap &&`
+  ${props => (props.wrap) &&`
     flex-wrap: wrap;
   `}
 
-  ${props => props.margin &&`
+  ${props => (props.margin) &&`
     margin: ${props.margin};
   `}
 `;
@@ -70,7 +70,7 @@ export const FlexColumn = styled(Container)`
 `;
 
 export const ColumnMobile = styled(Container)`
-  ${media.lessThan('xs')`
+  ${media.lessThan("xs")`
     flex-direction:column;
   `};
 `;
@@ -84,13 +84,13 @@ export const FlexWrap = styled.div`
 export const FlexRow = styled(Row)`
   position:relative;
   display:flex;
-  flex-direction: ${props => props.direction ? props.direction : 'row'};
+  flex-direction: ${props => (props.direction) ? props.direction : "row"};
 
-  ${props => props.xAlign &&`
+  ${props => (props.xAlign) &&`
     align-items: ${props.xAlign};
   `}
 
-  ${props => props.yAlign &&`
+  ${props => (props.yAlign) &&`
     justify-content: ${props.yAlign};
   `}
 `;
@@ -113,7 +113,7 @@ export const UnderlineLink = styled.button`
 `;
 
 // BUTTONS
-export const UnderLinkSpan = UnderlineLink.withComponent('span');
+export const UnderLinkSpan = UnderlineLink.withComponent("span");
 
 export const ButtonStyled = styled.button`
 	font-family: ${FONT_ROOT};
@@ -123,20 +123,20 @@ export const ButtonStyled = styled.button`
 		0 3px 8px 0 rgba(50, 54, 72, 0.2);
 	/* height: 43px; */
 	padding: 1rem 2rem;
-	text-transform: ${props => props.uppercase == true ? 'uppercase' : 'inherit' };
-	background-color: ${props => props.variant == 'outlined' ? 'transparent' : DARKBLUE};
+	text-transform: ${props => (props.uppercase) === true ? "uppercase" : "inherit" };
+	background-color: ${props => (props.variant) === "outlined" ? "transparent" : DARKBLUE};
 	font-size: 1rem;
   font-weight: ${BOLD};
   line-height: 1.4;
   text-align: center;
   color: white;
-	width: ${props => props.size == 'full' ? '100%' : 'auto'};
-	border: 1px solid ${props => props.variant == 'outlined' ? 'blue' : 'transparent'};
-	color:  ${props => props.variant == 'outlined' ? 'black' : 'white'};
+	width: ${props => (props.size) === "full" ? "100%" : "auto"};
+	border: 1px solid ${props => (props.variant) == "outlined" ? "blue" : "transparent"};
+	color:  ${props => (props.variant) === "outlined" ? "black" : "white"};
 	cursor: pointer;
 	transition: ${TRANSITION};
 
-	${media.greaterThan('sm')`
+	${media.greaterThan("sm")`
 		border-radius: 4px;
 		font-size: 1.3rem;
 		line-height: 1.55;
@@ -173,7 +173,7 @@ export const UnderLinkButton = styled(ButtonStyled)`
 	}
 `;
 
-export const ButtonStyledA = ButtonStyled.withComponent('a');
+export const ButtonStyledA = ButtonStyled.withComponent("a");
 
 export const BackButton = styled.div`
   position: relative;

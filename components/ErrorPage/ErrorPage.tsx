@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import { Grid } from '@styles/grid.styled';
+import Link from "next/link";
+import { Grid } from "@styles/grid.styled";
 import { ErrorStyled } from "./ErrorPage.styled";
-// import useMessage from './useMessage.hook';
+// import useMessage from "./useMessage.hook";
 
 type ErrorPageProps = {
 	status?: string,
@@ -16,7 +16,7 @@ const ErrorPage = ({ status, link } : ErrorPageProps ) => {
 			colSize={12}
 			xAlign={"center"}
 			yAlign={"center"}
-			style={{ height: '100vh' }}
+			style={{ height: "100vh" }}
 		>	
 			<Grid colSize={12} xAlign={"center"} yAlign={"center"} direction={"column"}>
 				<h2>Error {status}</h2>

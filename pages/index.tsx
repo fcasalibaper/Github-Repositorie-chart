@@ -1,9 +1,9 @@
-import { GetServerSideProps } from 'next'
-// import getConfig from 'next/config';
+import { GetServerSideProps } from "next"
+// import getConfig from "next/config";
 // const { publicRuntimeConfig = {} } = getConfig() || {};
 
-import client from '@const/ApolloClient';
-import QUERY from '@const/Query'
+import client from "@const/ApolloClient";
+import QUERY from "@const/Query";
 
 // Exporting Home
 export { default } from "@views/Home";
@@ -20,5 +20,5 @@ export const getServerSideProps: GetServerSideProps = async () => {
 			user: data?.user,
 			repos: data?.viewer.repositories.nodes,
     }
-  }
-}
+  };
+};

@@ -18,10 +18,10 @@ module.exports = {
   },
 	
 	images: {
-    domains: ['avatars.githubusercontent.com'],
+    domains: ["avatars.githubusercontent.com"],
   },
 	resole : {
-		modules: [path.resolve(__dirname, 'node_modules'), 'node_modules']
+		modules: [path.resolve(__dirname, "node_modules"), "node_modules"]
 	},
 	webpack(config, options) {
 		config.experiments = {};

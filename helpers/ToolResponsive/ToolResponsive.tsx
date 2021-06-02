@@ -1,20 +1,21 @@
-import { useState, useEffect } from 'react';
-import { ToolResponsiveCont } from './ToolResponsive.styled';
+import { useState, useEffect } from "react";
+import { ToolResponsiveCont } from "./ToolResponsive.styled";
 
 const ToolResponsive = ({ position }) => {
 	const [ state, setState ] = useState({ width: 0, height: 0 });
+
+	const updateWindowDimensions = () => {
+    setState({ width: window.innerWidth, height: window.innerHeight });
+  }
   
   useEffect(() => {
     updateWindowDimensions();
-		window.addEventListener('resize', updateWindowDimensions);
+		window.addEventListener("resize", updateWindowDimensions);
 		return () => {
-			window.removeEventListener('resize', updateWindowDimensions);
+			window.removeEventListener("resize", updateWindowDimensions);
 		}
   }, []);
   
-  const updateWindowDimensions = () => {
-    setState({ width: window.innerWidth, height: window.innerHeight });
-  }
 	return (
 		<ToolResponsiveCont position={position}>
 			<div className="resolution"></div>

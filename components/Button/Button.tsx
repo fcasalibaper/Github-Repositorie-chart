@@ -10,13 +10,12 @@ const Button = ({url, disabled} : ButtonProps) => {
 	const isPrivateText = !disabled ? url.split('/').pop() : 'Private';
 
 	return (
-		<Link href={!disabled ? url : '#'} passHref={!disabled ? true : false}>
+		<Link href={!disabled ? url : "#"} passHref={!disabled ? true : false}>
 			<ButtonStyled as="a" target="_blank" disabled={disabled}>
 				{ isPrivateText }
 			</ButtonStyled>
 		</Link>
-		
-	)
-}
+	);
+};
 
-export default Button
+export default Button;
