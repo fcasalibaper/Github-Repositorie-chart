@@ -1,4 +1,4 @@
-import { GetServerSideProps } from "next"
+import { GetServerSideProps } from "next";
 // import getConfig from "next/config";
 // const { publicRuntimeConfig = {} } = getConfig() || {};
 

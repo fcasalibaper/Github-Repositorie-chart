@@ -25,7 +25,7 @@ const Layout = ({children, userData} : LayoutProps) => {
 				{children}
 			</Container>
 		</LayoutWrapper>
-  )
+  );
 };
 
 export default Layout;

@@ -12,7 +12,7 @@ interface HeaderProps {
 		avatarUrl: string,
 		url: string
 	}
-};
+}
 
 const Header = ({ userData } : HeaderProps) => {
 	const { name, bio, location, avatarUrl, url } = userData;

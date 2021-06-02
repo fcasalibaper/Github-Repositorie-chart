@@ -1,5 +1,4 @@
 import Layout from "~/Layout/Layout";
-// import { ObjMap } from "const/const";
 import { Grid } from "@styles/grid.styled";
 import { Card } from "@styles/cards.styled";
 import Button from "~/Button/Button";

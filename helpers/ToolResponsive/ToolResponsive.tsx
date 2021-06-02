@@ -13,7 +13,7 @@ const ToolResponsive = ({ position }) => {
 		window.addEventListener("resize", updateWindowDimensions);
 		return () => {
 			window.removeEventListener("resize", updateWindowDimensions);
-		}
+		};
   }, []);
   
 	return (

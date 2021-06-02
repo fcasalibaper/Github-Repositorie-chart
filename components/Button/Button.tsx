@@ -7,7 +7,7 @@ interface ButtonProps {
 }
 
 const Button = ({url, disabled} : ButtonProps) => {
-	const isPrivateText = !disabled ? url.split('/').pop() : 'Private';
+	const isPrivateText = !disabled ? url.split("/").pop() : "Private";
 
 	return (
 		<Link href={!disabled ? url : "#"} passHref={!disabled ? true : false}>
