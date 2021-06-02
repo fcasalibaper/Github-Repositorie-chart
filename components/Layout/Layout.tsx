@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react"
+import React, { ReactNode } from "react";
 import { Container } from "@styles/general.styles";
 import Header from "~/Header/Header";
 import { LayoutWrapper } from "./Layout.styled";
@@ -25,8 +25,7 @@ const Layout = ({children, userData} : LayoutProps) => {
 				{children}
 			</Container>
 		</LayoutWrapper>
-		
   )
-}
+};
 
 export default Layout;

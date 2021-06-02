@@ -1,5 +1,5 @@
 // next.config.js
-var path = require('path');
+var path = require("path");
 var TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = {

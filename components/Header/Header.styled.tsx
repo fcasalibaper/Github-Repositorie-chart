@@ -15,7 +15,7 @@ export const HeaderStyled = styled(Grid)`
 							0 4px 10px 0 rgba(0,0,0,0.04),
 							0 6px 15px 0 rgba(0,0,0,0.06);
 
-	${media.greaterThan('sm')`
+	${media.greaterThan("sm")`
 		padding-top: 30px;
 		padding-bottom: 30px;
 		margin-bottom: 50px;
@@ -29,7 +29,7 @@ export const HeaderStyled = styled(Grid)`
 		text-transform: uppercase;
 		letter-spacing: .2em;
 
-		${media.greaterThan('sm')`
+		${media.greaterThan("sm")`
 			font-size: 3rem;
 		`};
 	}

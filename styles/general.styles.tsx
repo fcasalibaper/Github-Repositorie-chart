@@ -131,7 +131,7 @@ export const ButtonStyled = styled.button`
   text-align: center;
   color: white;
 	width: ${props => (props.size) === "full" ? "100%" : "auto"};
-	border: 1px solid ${props => (props.variant) == "outlined" ? "blue" : "transparent"};
+	border: 1px solid ${props => (props.variant) === "outlined" ? "blue" : "transparent"};
 	color:  ${props => (props.variant) === "outlined" ? "black" : "white"};
 	cursor: pointer;
 	transition: ${TRANSITION};
@@ -150,7 +150,7 @@ export const ButtonStyled = styled.button`
 								0 12px 12px 0px rgba(120, 56, 133, 0.04);
 	}
 
-	${props => props.disabled &&`
+	${props => (props.disabled) &&`
 		cursor: none;
 		pointer-event: none;
 		background-color: #9e9e9e;

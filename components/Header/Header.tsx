@@ -30,7 +30,7 @@ const Header = ({ userData } : HeaderProps) => {
 								width={50}
 								height={50}
 							/>
-							<h2 style={{ paddingLeft: '20px'}}>{name} - Repos</h2>
+							<h2 style={{ paddingLeft: "20px"}}>{name} - Repos</h2>
 						</Grid>
 					</a>
 				</Link>

@@ -1,5 +1,5 @@
 import { generateMedia } from "styled-media-query";
-import { PADDING_DESKTOP_LR } from './variables.styled';
+import { PADDING_DESKTOP_LR } from "./variables.styled";
 
 export const containerMaxWidth = 1100 + (PADDING_DESKTOP_LR*2) ;
 

@@ -6,7 +6,7 @@ const ToolResponsive = ({ position }) => {
 
 	const updateWindowDimensions = () => {
     setState({ width: window.innerWidth, height: window.innerHeight });
-  }
+  };
   
   useEffect(() => {
     updateWindowDimensions();

@@ -26,7 +26,7 @@ describe("helpers", () => {
 
 	test("Money undefined", () => {
 		const moneyVals = {
-			initial : undefined,
+			initial : null,
 			finalResult : ""
 		};
 		const result = render(money(moneyVals.initial / 100));

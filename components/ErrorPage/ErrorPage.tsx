@@ -26,6 +26,6 @@ const ErrorPage = ({ status, link } : ErrorPageProps ) => {
 			</Grid>
 		</ErrorStyled>
 	);
-}
+};
 
-export default ErrorPage
+export default ErrorPage;

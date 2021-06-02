@@ -8,13 +8,8 @@ export const filteredByKey = (arr : Object[], accepted) => {
 		if (accepted.indexOf(type) > -1)  {
 			result[type] = arr[type];
 		}
-	};
+	}
 	return result;
-};
-
-export const money = (n : number) => {
-  var d = n % 1 === 0 ? 0 : 2;
-  return decimals(n);
 };
 
 const decimals = (n : number) => {
@@ -25,6 +20,13 @@ const decimals = (n : number) => {
   });
 };
 
+export const money = (n : number) => {
+  var d = n % 1 === 0 ? 0 : 2;
+  return decimals(n);
+};
+
+
+
 export const unique = (value, index, self) => {
   return self.indexOf(value) === index;
 };
@@ -32,9 +34,9 @@ export const unique = (value, index, self) => {
 export const getData = async ( api ) => {
 	const response = await axios.get(api)
     .then((res) => res.data)
-    .then(data => {
+    .then((data) => {
       return data;
     })
-		.catch(e => console.log(`error: ${e}`));
+		.catch((e) => e?.status);
 	return response;
 };

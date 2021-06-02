@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from "next/head";
 
 const MyHead = (props) => {
 	return (
@@ -14,7 +14,7 @@ const MyHead = (props) => {
       {/* Step 5: Output the styles in the head  */}
       {props.children}
     </Head>
-  )
-}
+  );
+};
 
 export default MyHead;

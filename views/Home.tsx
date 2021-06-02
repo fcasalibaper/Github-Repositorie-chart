@@ -28,7 +28,7 @@ interface HomeProps {
 		url: string,
 		avatarUrl: string
 	}
-};
+}
 
 const useMatchMediaFn = (breakpoint) => {
 	const width = pxs[breakpoint] + 1;
@@ -44,7 +44,7 @@ const Queries = ({ dataRepo }) => {
 			colSize={12}
 			wrap="true"
 		>
-		{ dataRepo.map(p => <Grid 
+		{ dataRepo.map((p) => <Grid 
 			key={p.id}
 			as="li"
 			colSizeMD={4}
